@@ -30,7 +30,7 @@ a{color:inherit;text-decoration:none}svg,img{display:block;max-width:100%}
 .h9 .hd.hide{transform:translateY(-140%)}
 .h10 .hd{padding-right:6px}.h10 .hd nav{position:absolute;left:50%;transform:translateX(-50%)}
 .swh{position:fixed;right:12px;bottom:12px;z-index:70;display:flex;gap:10px;align-items:center;background:#111;color:#fff;font-size:12px;padding:8px 12px;border-radius:4px}.swh a{color:#fff;opacity:.8;padding:0 4px}.swh a:hover{opacity:1;color:var(--ac)}
-@media(min-width:901px){.hd,.h10 .hd{min-height:51px;padding:7px 7px 7px 19px;--lgs:16.4px}.hd nav{font-size:15px;gap:22px}.cta2{font-size:15.3px;padding:0 19px;right:7px;top:7px;bottom:7px}.mega{top:70px}}
+@media(min-width:901px){.hd{left:var(--pad);right:32px;transition:left .55s cubic-bezier(.2,.7,.2,1),right .55s cubic-bezier(.2,.7,.2,1),transform .45s cubic-bezier(.2,.7,.2,1),background .4s,box-shadow .4s,color .3s}.mega{left:var(--pad);right:32px;transition:left .55s cubic-bezier(.2,.7,.2,1),right .55s cubic-bezier(.2,.7,.2,1),opacity .35s,transform .55s cubic-bezier(.2,.7,.2,1)}body.scr .hd,body.scr .mega{left:100px;right:100px}.hd,.h10 .hd{min-height:51px;padding:7px 7px 7px 19px;--lgs:16.4px}.hd nav{font-size:15px;gap:22px}.cta2{font-size:15.3px;padding:0 19px;right:7px;top:7px;bottom:7px}.mega{top:70px}}
 @media(max-width:900px){.hd{padding:6px 12px}.hd nav a,.hd .strip,.cta2{display:none}.hd{gap:12px;left:10px;right:10px;top:10px;min-height:48px}.mb{display:inline-flex}.mega{left:10px!important;right:10px!important;top:66px!important;max-height:calc(100vh - 78px)}.h3 .hd{padding:6px 14px}.mega{grid-template-columns:1fr;padding:28px 22px;top:62px!important}.h4 .mega{top:90px!important}}
 /* hero */
 .hero{height:100vh;min-height:620px;position:relative;overflow:hidden;background:#cfd6dd}
@@ -197,4 +197,7 @@ function lab(){$('.mb span').forEach(x=>x.textContent=document.body.classList.co
 
 // hero-video: respekter redusert bevegelse
 {const v=document.querySelector('.hv video');if(v){if(matchMedia('(prefers-reduced-motion:reduce)').matches)v.pause();else v.play&&v.play().catch(()=>{})}}
+
+// header krymper inn når man blar
+(()=>{const f=()=>document.body.classList.toggle('scr',scrollY>40);f();addEventListener('scroll',f,{passive:true})})();
 </script></body></html>
