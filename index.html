@@ -238,10 +238,6 @@ body.scr .mega{left:100px!important;right:100px!important}
 .ft.fx2{background:#141414!important;color:#F4F1EA;border-top:0}
 .fx2 h5{color:rgba(244,241,234,.5)}.fx2 .sym{color:#fff;opacity:.07}.fx2 .sym path{fill:currentColor}
 .fx2 .legal{color:rgba(244,241,234,.55);border-top-color:rgba(255,255,255,.16)}
-
-.fly{position:absolute;left:0;top:0;margin:0!important;z-index:45;white-space:nowrap;display:inline-flex;align-items:center;padding:6px 13px;border-radius:999px;background:rgba(255,255,255,.16);-webkit-backdrop-filter:blur(18px) saturate(1.6);backdrop-filter:blur(18px) saturate(1.6);border:1px solid rgba(255,255,255,.35);box-shadow:0 8px 30px rgba(0,0,0,.16);color:#fff;font-size:14px;font-weight:500;letter-spacing:.01em;animation:none!important;opacity:1!important;will-change:transform;transition:color .35s,background .35s,border-color .35s,box-shadow .35s}
-.fly.lt{color:#111;background:rgba(255,255,255,.55);border-color:rgba(0,0,0,.22);box-shadow:0 6px 20px rgba(10,20,30,.1)}
-.hw.pl{color:var(--ink)!important;text-decoration:underline;text-decoration-color:var(--ac);text-decoration-thickness:.06em;text-underline-offset:.1em}
 </style></head><body data-vx="2" class="h10 fb2"><div class="scrim" data-menu></div>
 <nav class="mega" aria-label="Hovedmeny">
 <div class="col"><a class="main" href="#om">Om oss</a><h4>Tjenester</h4><a href="#om">Rådgivning og partnerskap</a><a href="#om">Utviklere og designere</a><a href="#om">Fra POC til drift</a><a href="#om">Langsiktig samarbeid</a></div>
@@ -332,30 +328,4 @@ function lab(){$('.mb span').forEach(x=>x.textContent=document.body.classList.co
 (()=>{const B=document.body,L='abcde',q=new URLSearchParams(location.search).get('vx');let n=L.includes(q||'-')?q:(()=>{try{return localStorage.getItem('vx2')}catch(e){return null}})();if(!L.includes(n||'-'))n='a';const set=k=>{B.dataset.vx=k;document.querySelectorAll('.vsw button').forEach(b=>b.classList.toggle('on',b.dataset.vx===k));try{localStorage.setItem('vx2',k)}catch(e){}};document.querySelectorAll('.vsw button').forEach(b=>b.onclick=()=>set(b.dataset.vx));set(n)})();
 
 document.querySelectorAll('.mtb').forEach(b=>b.onclick=()=>{document.querySelectorAll('.mtb,.mp').forEach(e=>e.classList.remove('on'));b.classList.add('on');document.querySelectorAll('.mp')[+b.dataset.i].classList.add('on')});
-</script><script>(function(){
-var tag=document.querySelector('.hero .eb'),hero=document.querySelector('.hero'),h2=document.querySelector('#om h2.hl');
-if(!tag||!h2)return;
-var words=[].slice.call(h2.querySelectorAll('.hw')),pi=-1;
-words.forEach(function(w,i){if(pi<0&&/^AI-studio/.test(w.textContent))pi=i});
-var ph=pi<0?[]:words.slice(pi,pi+3);
-tag.className='fly';document.body.appendChild(tag);
-function ease(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}
-function lerp(a,b,t){return a+(b-a)*t}
-function frame(){
- var w=tag.offsetWidth,h=tag.offsetHeight,H=hero.offsetHeight,vw=document.documentElement.clientWidth,sy=window.scrollY;
- var r=ph[0]?ph[0].getBoundingClientRect():null;
- var S={x:vw-32-w/2,y:H-36-h/2};
- if(vw<=900){var t1=hero.querySelector('h1').getBoundingClientRect().top+sy;S={x:20+w/2,y:t1-16-h/2}}
- var E=r?{x:r.left+w/2,y:r.top+sy-12-h/2}:S;
- var stop=Math.max(240,(r?r.top+sy:H)-innerHeight*.55);
- var p=Math.max(0,Math.min(1,sy/stop)),e=ease(p);
- var x=lerp(S.x,E.x,e),y=lerp(S.y,E.y,e);
- tag.style.transform='translate('+(x-w/2)+'px,'+(y-h/2)+'px)';
- tag.classList.toggle('lt',y>H+8);
- ph.forEach(function(w){w.classList.toggle('pl',p>.9)});
-}
-var q=0;function sched(){if(q)return;q=requestAnimationFrame(function(){q=0;frame()})}
-addEventListener('scroll',sched,{passive:true});addEventListener('resize',sched);
-addEventListener('load',function(){frame();setTimeout(frame,600)});
-if(document.fonts&&document.fonts.ready)document.fonts.ready.then(frame);
-frame()})()</script></body></html>
+</script></body></html>
