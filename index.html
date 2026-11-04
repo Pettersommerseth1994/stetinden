@@ -243,7 +243,7 @@ body.scr .mega{left:100px!important;right:100px!important}
 
 body{--iw:270px;--lx:0px}
 @keyframes hdi{from{opacity:0;transform:translateY(-22px) scale(.92)}}
-.hd{animation:hdi .9s cubic-bezier(.2,.7,.2,1) both!important;animation-delay:0s!important;transition:left .8s cubic-bezier(.2,.7,.2,1),right .8s cubic-bezier(.2,.7,.2,1),padding .8s cubic-bezier(.2,.7,.2,1),clip-path .9s cubic-bezier(.2,.7,.2,1),transform .45s cubic-bezier(.2,.7,.2,1),background .4s,box-shadow .4s,color .3s!important}
+.hd{animation:none!important;transition:left .8s cubic-bezier(.2,.7,.2,1),right .8s cubic-bezier(.2,.7,.2,1),padding .8s cubic-bezier(.2,.7,.2,1),clip-path .9s cubic-bezier(.2,.7,.2,1),transform .45s cubic-bezier(.2,.7,.2,1),background .4s,box-shadow .4s,color .3s!important}
 .hd .lgl{transition:transform .9s cubic-bezier(.2,.7,.2,1)}
 .hd nav,.hd .mb{transition:opacity .5s .5s}
 .cta2{transition:opacity .5s .5s,box-shadow .3s!important}
@@ -263,7 +263,7 @@ body[data-hi="d"].intro .hd .lgl{transform:translateX(var(--lx))}
 .hisw{position:fixed;left:16px;bottom:16px;z-index:70;display:flex;gap:6px;align-items:center;font-size:12px;padding:8px 10px;border-radius:6px;background:rgba(255,255,255,.88);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);box-shadow:0 8px 30px rgba(10,20,30,.18);color:#444}
 .hisw button{min-width:30px;height:30px;padding:0 8px;border:1px solid rgba(0,0,0,.15);background:#fff;border-radius:4px;font:500 13px Inter Tight,sans-serif;cursor:pointer;color:#111}
 .hisw button.on{background:#EF7140;border-color:#EF7140}
-</style></head><body data-vx="2" data-hi="a" class="h10 fb2 intro"><div class="scrim" data-menu></div>
+</style></head><body data-vx="2" data-hi="a" class="h10 fb2"><div class="scrim" data-menu></div>
 <nav class="mega" aria-label="Hovedmeny">
 <div class="col"><a class="main" href="#om">Om oss</a><h4>Tjenester</h4><a href="#om">Rådgivning og partnerskap</a><a href="#om">Utviklere og designere</a><a href="#om">Fra POC til drift</a><a href="#om">Langsiktig samarbeid</a></div>
 <div class="col"><a class="main" href="#ventures">Ventures</a><a href="#ventures">Efjord Extreme<small>Triatlon i Nord-Norge · 7. august 2027</small></a><a href="#ventures">Disputt<small>Bløffspill · Diskuter, manipuler og vinn</small></a><a href="#ventures">Pango Consulting<small>Studentkonsulenter · Trondheim</small></a><div class="sp"></div><a class="main" href="#prosjekter">Prosjekter</a><a href="#prosjekter">Saksbehandling<small>Offentlig sektor</small></a><a href="#prosjekter">Regelverkassistent<small>Finans</small></a><a href="#prosjekter">Kundeservice<small>Handel</small></a><a href="#prosjekter">Dokumentkontroll<small>Bygg og eiendom</small></a></div>
@@ -363,5 +363,5 @@ function set(k,replay){V=k;B.dataset.hi=k;document.querySelectorAll('.hisw [data
 var n=null;try{n=new URLSearchParams(location.search).get('hi')||localStorage.getItem('hi1')}catch(e){}if(!/^[a-e]$/.test(n||''))n='a';
 document.querySelectorAll('.hisw [data-hi]').forEach(function(b){b.onclick=function(){set(b.dataset.hi,true)}});
 var rp=document.querySelector('.hisw .rp');if(rp)rp.onclick=function(){B.classList.add('intro');setTimeout(function(){go(900)},350)};
-set('a',false);meas();go(Math.max(0,2200-performance.now()));
-addEventListener('resize',meas)})()</script></body></html>
+set('a',false);
+})()</script></body></html>
